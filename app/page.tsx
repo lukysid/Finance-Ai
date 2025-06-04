@@ -1,5 +1,5 @@
-
+import { Button } from "./_components/ui/button";
 
 export default function Home() {
-  return <h1>hello word</h1> ;
+  return <Button>Inicial </Button>;
 }

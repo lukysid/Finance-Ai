@@ -40,7 +40,7 @@ import {
   TRANSACTION_TYPE_OPTIONS,
 } from "../_constants/transactions";
 import { DatePicker } from "./ui/date-picker";
-import { upsertTransaction } from "../_actions/add-transactions";
+import { upsertTransaction } from "../_actions/upsert-transactions";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, {

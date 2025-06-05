@@ -29,19 +29,19 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-interface TransactionPieChartProps {
+interface TransactionsPieChartProps {
   typesPercentage: TransactionPercentagePerType;
   depositsTotal: number;
-  investimentsTotal: number;
+  investmentsTotal: number;
   expensesTotal: number;
 }
 
-const TransactionPieChart = ({
+const TransactionsPieChart = ({
   depositsTotal,
-  investimentsTotal,
+  investmentsTotal,
   expensesTotal,
   typesPercentage,
-}: TransactionPieChartProps) => {
+}: TransactionsPieChartProps) => {
   const chartData = [
     {
       type: TransactionType.DEPOSIT,
@@ -55,12 +55,12 @@ const TransactionPieChart = ({
     },
     {
       type: TransactionType.INVESTMENT,
-      amount: investimentsTotal,
+      amount: investmentsTotal,
       fill: "#FFFFFF",
     },
   ];
   return (
-    <Card className="flex flex-col p-12">
+    <Card className="flex flex-col p-6">
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
@@ -80,20 +80,20 @@ const TransactionPieChart = ({
           </PieChart>
         </ChartContainer>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           <PercentageItem
-            icon={<TrendingUpIcon className="text-primary" />}
+            icon={<TrendingUpIcon size={16} className="text-primary" />}
             title="Receita"
             value={typesPercentage[TransactionType.DEPOSIT]}
           />
           <PercentageItem
-            icon={<TrendingDownIcon className="text-red-500" />}
-            title="Receita"
+            icon={<TrendingDownIcon size={16} className="text-red-500" />}
+            title="Despesas"
             value={typesPercentage[TransactionType.EXPENSE]}
           />
           <PercentageItem
-            icon={<PiggyBankIcon />}
-            title="Receita"
+            icon={<PiggyBankIcon size={16} />}
+            title="Investido"
             value={typesPercentage[TransactionType.INVESTMENT]}
           />
         </div>
@@ -102,4 +102,4 @@ const TransactionPieChart = ({
   );
 };
 
-export default TransactionPieChart;
+export default TransactionsPieChart;

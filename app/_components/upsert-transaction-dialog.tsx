@@ -147,7 +147,8 @@ const UpsertTransactionsDialog = ({
                   <FormLabel>Valor</FormLabel>
                   <FormControl>
                     <MoneyInput
-                      placeholder="Digite o valor ..."
+                      placeholder="Digite o valor..."
+                      value={field.value}
                       onValueChange={({ floatValue }) =>
                         field.onChange(floatValue)
                       }
@@ -155,7 +156,6 @@ const UpsertTransactionsDialog = ({
                       disabled={field.disabled}
                     />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}

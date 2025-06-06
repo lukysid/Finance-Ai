@@ -31,6 +31,5 @@ export const createStripeCheckout = async () => {
       },
     ],
   });
-
   return { sessionId: session.id };
 };
